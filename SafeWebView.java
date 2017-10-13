@@ -31,6 +31,8 @@ public class SafeWebView extends WebView {
         //移除低版本默认添加的Js接口（可能存在安全隐患）
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
             removeJavascriptInterface("searchBoxJavaBridge_");
+            removeJavascriptInterface("accessibility");
+            removeJavascriptInterface("accessibilityTraversal");
         }
 
         //记录js接口名称，用于释放
